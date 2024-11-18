@@ -1,4 +1,4 @@
-class Car {
+ export class Car {
     #mileage = 0; // Private field
   
     constructor(brand, model) {
@@ -11,7 +11,25 @@ class Car {
       console.log(`Drove ${distance} miles. Total mileage: ${this.#mileage}`);
     }
   }
+
+  export class BankAccount {
+    #balance; // Private field
+    constructor(accountHolder, balance) {
+      this.accountHolder = accountHolder;
+      this.#balance = balance;
+    }
+    getBalance() {
+      return this.#balance;
+    }
+    deposit(amount) {
+      if (amount > 0) {
+        this.#balance += amount;
+      }
+    }
+  }
   
-let myCar = new Car("Toyota", "Camry");
-myCar.drive(100)
+
+  
+  
+
   
